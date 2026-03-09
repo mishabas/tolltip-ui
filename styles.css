@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-menu-list {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 150px;
+
+}
+
+.projects  {
+    position: relative;
+    white-space: nowrap;
+}
+
+.home {
+    position: relative;
+    white-space: nowrap;
+}
+
+.blog {
+    position: relative;
+    white-space: nowrap;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+.tooltip-home {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+    transition:  opacity 0.3s ease , transform 0.3s;
+    pointer-events: none;
+
+}
+
+.tooltip-blog {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px) scale(0.9);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+
+}
+
+
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent black transparent;
+}
+
+
+
+.projects:hover .tooltip {
+    opacity: 1;
+    transition: opacity 0.3s ease,transform 0.3s ease;
+}
+
+.home:hover .tooltip-home {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.blog:hover .tooltip-blog {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
